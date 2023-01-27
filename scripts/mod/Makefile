@@ -31,8 +31,8 @@ define cmd_offsets
 	 echo "#endif" ) > $@
 endef
 
-$(obj)/$(devicetable-offsets-file): $(obj)/devicetable-offsets.s
-	$(call if_changed,offsets)
+$(obj)/$(devicetable-offsets-file): $(obj)/devicetable-offsets.s FORCE
+	$(call filechk,offsets,__DEVICETABLE_OFFSETS_H__)
 
 targets += $(devicetable-offsets-file) devicetable-offsets.s
 
