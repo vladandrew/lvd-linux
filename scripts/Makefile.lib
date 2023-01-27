@@ -409,8 +409,6 @@ cmd_xzmisc = (cat $(filter-out FORCE,$^) | \
 	xz --check=crc32 --lzma2=dict=1MiB) > $@ || \
            (rm -f $@ ; false)
 
- 	(rm -f $@ ; false)
-
 # ASM offsets
 # ---------------------------------------------------------------------------
 
