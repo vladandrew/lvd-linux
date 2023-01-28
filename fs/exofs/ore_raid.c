@@ -74,13 +74,13 @@ static int _sp2d_alloc(unsigned pages_in_unit, unsigned group_width,
 	struct _alloc_all_bytes {
 		struct __alloc_stripe_pages_2d {
 			struct __stripe_pages_2d sp2d;
-			struct __1_page_stripe _1p_stripes[pages_in_unit];
+			struct __1_page_stripe _1p_stripes[100];
 		} __asp2d;
 		struct __alloc_1p_arrays {
-			struct page *pages[group_width];
-			struct page *scribble[group_width];
-			char page_is_read[data_devs];
-		} __a1pa[pages_in_unit];
+			struct page *pages[100];
+			struct page *scribble[100];
+			char page_is_read[100];
+		} __a1pa[100];
 	} *_aab;
 	struct __alloc_1p_arrays *__a1pa;
 	struct __alloc_1p_arrays *__a1pa_end;

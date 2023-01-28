@@ -108,7 +108,7 @@ static int adc_jack_probe(struct platform_device *pdev)
 	}
 
 	data->dev = &pdev->dev;
-	data->edev = devm_extcon_dev_allocate(&pdev->dev, pdata->cable_names);
+	//data->edev = devm_extcon_dev_allocate(&pdev->dev, pdata->cable_names);
 	if (IS_ERR(data->edev)) {
 		dev_err(&pdev->dev, "failed to allocate extcon device\n");
 		return -ENOMEM;

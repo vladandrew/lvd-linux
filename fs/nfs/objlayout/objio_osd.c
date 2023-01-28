@@ -301,7 +301,7 @@ objio_alloc_io_state(struct pnfs_layout_hdr *pnfs_layout_type, bool is_reading,
 	int ret;
 	struct __alloc_objio_state {
 		struct objio_state objios;
-		struct pnfs_osd_ioerr ioerrs[objio_seg->oc.numdevs];
+		struct pnfs_osd_ioerr ioerrs[100];
 	} *aos;
 
 	aos = kzalloc(sizeof(*aos), gfp_flags);

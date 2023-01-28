@@ -150,10 +150,10 @@ int  _ore_get_io_state(struct ore_layout *layout,
 	struct osd_sg_entry *sgilist;
 	struct __alloc_all_io_state {
 		struct ore_io_state ios;
-		struct ore_per_dev_state per_dev[numdevs];
+		struct ore_per_dev_state per_dev[100];
 		union {
-			struct osd_sg_entry sglist[sgs_per_dev * numdevs];
-			struct page *pages[num_par_pages];
+			struct osd_sg_entry sglist[100];
+			struct page *pages[100];
 		};
 	} *_aios;
 
@@ -171,11 +171,11 @@ int  _ore_get_io_state(struct ore_layout *layout,
 	} else {
 		struct __alloc_small_io_state {
 			struct ore_io_state ios;
-			struct ore_per_dev_state per_dev[numdevs];
+			struct ore_per_dev_state per_dev[100];
 		} *_aio_small;
 		union __extra_part {
-			struct osd_sg_entry sglist[sgs_per_dev * numdevs];
-			struct page *pages[num_par_pages];
+			struct osd_sg_entry sglist[100];
+			struct page *pages[100];
 		} *extra_part;
 
 		_aio_small = kzalloc(sizeof(*_aio_small), GFP_KERNEL);
