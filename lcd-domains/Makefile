@@ -54,6 +54,8 @@ export LCD_DOMAINS_CFLAGS=\
 # Don't print "Entering directory..." etc.
 MAKEFLAGS += --no-print-directory
 
+KASAN_SANITIZE := n
+
 # Since we aren't hooked into the Linux build, we need
 # to define this so we can use it in this file. (The
 # kernel build system will have it def'd when it sucks

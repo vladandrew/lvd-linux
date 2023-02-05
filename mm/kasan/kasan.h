@@ -53,6 +53,7 @@ struct kasan_global {
 #if KASAN_ABI_VERSION >= 4
 	struct kasan_source_location *location;
 #endif
+	char *odr_indicator;
 };
 
 /**
